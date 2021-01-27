@@ -13,6 +13,9 @@ set data_mode in test.py to 'REDS4' and 'Vid4', the default noise level is set a
 ```
 python /codes/test.py
 ```
+
+To Note that: we only put a subset of REDS4 and Vid4 to save space, please download the full testset in official website, [RED](https://seungjunnah.github.io/Datasets/reds.html) and [Vid](http://toflow.csail.mit.edu/). More detail can refer to [data preparation](https://github.com/xinntao/EDVR/blob/master/docs/DatasetPreparation.md)
+
 * Testing on real captured images:
 
 TBA (We test real-world data using the same model as REDS4 and Vid4, the testset is still preparing.)
