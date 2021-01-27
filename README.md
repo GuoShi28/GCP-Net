@@ -33,5 +33,10 @@ python /code/test_real.py
 ```
 python -m torch.distributed.launch --nproc_per_node=2 --master_port=4540 train.py -opt options/train/train_GCP_Net.yml --launcher pytorch
 ```
+
+## Environment
+* Refer to the [requirement.txt](https://github.com/GuoShi28/GCP-Net/blob/main/requirements.txt)
+* We utilize pytorch 1.2 and the deformable version does not support pytorch > 1.3. Thus when you use newest pytorch, please replace deformable version to newest (refer to [BasicSR](https://github.com/xinntao/BasicSR)). 
+
 ## Acknowledgement
 This repo is built upon the framework of [EDVR](https://github.com/xinntao/EDVR), and we borrow some code from [Unprocessing denoising](https://github.com/timothybrooks/unprocessing), thanks for their excellent work!
