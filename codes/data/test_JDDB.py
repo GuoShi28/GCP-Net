@@ -161,7 +161,8 @@ def read_rggb_img_seq_opts_joint(path, metadata):
         temp = unprocess.mosaic(temp)
         temp = unprocess.add_noise(temp, shot_noise, read_noise)
         temp = temp.clamp(0.0, 1.0)
-        temp_np = torch.sqrt(shot_noise * temp + read_noise**2)
+        # temp_np = torch.sqrt(shot_noise * temp + read_noise**2)
+        temp_np = shot_noise * temp + read_noise
 
         img_noise.append(temp)
         img_noise_map.append(temp_np)
