@@ -150,7 +150,8 @@ class Vimeo90KDataset_RGGB(data.Dataset):
             img_LQ_l = [unprocess.mosaic(v) for v in img_LQ_l]
             img_LQ_l = [unprocess.add_noise(v, shot_noise, read_noise) for v in img_LQ_l]
             img_LQ_l = [v.clamp(0.0, 1.0) for v in img_LQ_l]
-            img_noise_map = [torch.sqrt(shot_noise * v + read_noise**2) for v in img_LQ_l]
+            # img_noise_map = [torch.sqrt(shot_noise * v + read_noise**2) for v in img_LQ_l]
+            img_noise_map = [shot_noise * v + read_noise for v in img_LQ_l]
 
         # stack LQ images to NHWC, N is the frame number
         img_LQs = torch.stack(img_LQ_l, axis=0)
